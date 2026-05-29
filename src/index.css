@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-phantom-bg: #07070E;
+  --color-phantom-navy: #07070E;
+  --color-phantom-gold: #D4AF37;
+  --color-phantom-amber: #F39C12;
+  --color-phantom-crimson: #C0392B;
+  --color-phantom-emerald: #2ECC71;
+  --color-phantom-white: rgba(255, 255, 255, 0.06);
+  
+  --font-phantom: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-phantom-navy text-white font-phantom antialiased;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+}
+
+@layer components {
+  .cinematic-glow-gold {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  }
+  
+  .cinematic-glow-emerald {
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
+  }
+
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
+  }
+
+  .gold-text {
+    @apply bg-gradient-to-b from-[#F5E6AD] via-[#D4AF37] to-[#8A6D3B] bg-clip-text text-transparent;
+  }
+
+  .gold-button {
+    @apply bg-gradient-to-b from-[#F5E6AD] via-[#D4AF37] to-[#8A6D3B] text-black shadow-[0_0_15px_rgba(212,175,55,0.4)];
+  }
+
+  .dark-button {
+    @apply bg-gradient-to-b from-[#222] to-[#000] border border-white/10 text-white shadow-xl;
+  }
+
+  /* Specific styles for reconstruction */
+  .phantom-card {
+    @apply bg-[#0D0D0D] border border-[#1A1A1A] rounded-[24px];
+  }
+
+  .phantom-inner-card {
+    @apply bg-[#121212] border border-[#1F1F1F] rounded-[20px];
+  }
+
+  .emerald-border-glow {
+    @apply border border-phantom-emerald/30 shadow-[0_0_15px_rgba(46,204,113,0.2)];
+  }
+
+  .gold-border-glow {
+    @apply border border-phantom-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.2)];
+  }
+}
